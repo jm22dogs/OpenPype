@@ -15,6 +15,11 @@ class CreateOutputNode(pyblish.api.ContextPlugin):
 
     def process(self, context):
         # capture selection state
+
+        anatomy_data = context.data["anatomyData"]
+        self.log.warning(f"The current anatomy family is {anatomy_data.get('family')}")
+        self.log.warning(f"The current instance family is {context.data.get('family')}")
+
         with maintained_selection():
             active_node = [node for inst in context
                            for node in inst

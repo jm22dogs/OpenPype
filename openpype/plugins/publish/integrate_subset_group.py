@@ -44,6 +44,11 @@ class IntegrateSubsetGroup(pyblish.api.InstancePlugin):
             ).format(instance.data["subsetGroup"]))
             return
 
+        anatomy_data = instance.data["anatomyData"]
+        self.log.warning(f"The current anatomy family is {anatomy_data.get('family')}")
+        self.log.warning(f"The current instance family is {instance.data.get('family')}")
+
+
         # Skip if there is no matching profile
         filter_criteria = self.get_profile_filter_criteria(instance)
         profile = filter_profiles(

@@ -24,6 +24,13 @@ class CollectSlateGlobal(pyblish.api.InstancePlugin):
 
     def process(self, instance):
 
+
+        anatomy_data = instance.data["anatomyData"]
+        self.log.warning(f"The current anatomy family is {anatomy_data.get('family')}")
+        self.log.warning(f"The current instance family is {instance.data.get('family')}")
+
+
+
         context = instance.context
         publ_settings = context.data["project_settings"]["global"]["publish"]
         version_padding = context.data["anatomy"]["templates"]["defaults"]\

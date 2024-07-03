@@ -2,11 +2,12 @@ import os
 import re
 import json
 import getpass
+from pprint import pformat
 
 import requests
 import pyblish.api
 
-import nuke
+import nuke # type: ignore
 from openpype.pipeline import legacy_io
 
 
@@ -130,7 +131,7 @@ class NukeSubmitDeadline(pyblish.api.InstancePlugin):
             families.insert(0, "prerender")
         instance.data["families"] = families
 
-        self.log.debug(json.dumps(instance.data, ))
+        self.log.debug(pformat(instance.data))
 
     def payload_submit(
         self,
