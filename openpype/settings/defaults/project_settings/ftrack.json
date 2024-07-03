@@ -96,7 +96,7 @@
             "enabled": true,
             "mapping": {},
             "asset_types_to_skip": [],
-            "asset_prefix_to_skip": ["prerender", "preRender"]
+            "asset_prefix_to_skip": ["prerender"]
         },
         "next_task_update": {
             "enabled": true,
